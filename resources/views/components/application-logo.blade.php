@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="142pt" height="100pt" viewBox="0 0 142 100" version="1.1" {{ $attributes }}>
     <g id="surface1">
         <path style="stroke:none;fill-rule:nonzero;fill:rgb(76.078431%,89.019608%,89.803922%);fill-opacity:1;" d="M 0 0.0078125 L 142 0.0078125 L 142 100 L 0 100 Z M 0 0.0078125 "/>

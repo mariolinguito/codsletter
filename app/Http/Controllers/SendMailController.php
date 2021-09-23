@@ -48,7 +48,6 @@ class SendMailController extends Controller
     public function startMailing() {
         foreach(User::all() as $user) {
             $this->sendNewsletter($user);
-            echo "Start mailing...";
         }
     }
 

@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
 
         // Check the mailing every day.    
         $schedule->command('start:mailing')
-            ->daily()
+            ->everyMinute()
             ->runInBackground();
     }
 

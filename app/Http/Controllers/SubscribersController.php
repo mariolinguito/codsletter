@@ -27,8 +27,6 @@ class SubscribersController extends Controller
     }
 
     public function subscribe(Request $request) {
-        
-        // get website id from token
 
         try {
             $website = DB::table('websites')->where('websites.token', $request->token)->first();
@@ -41,7 +39,13 @@ class SubscribersController extends Controller
                 'website_id' => $website_id,
             ]);
 
-            return Redirect::to($request->redirect_to);
+            if(isset($request->redirect_to) && !empty($request->redirect_to)) {
+                return Redirect::to($request->redirect_to);
+            } else {
+                return response()->json([
+                    'status' => 'Wou! You are in.',
+                ]);
+            }
 
         } catch(\ErrorException $exception) {
             # error handler

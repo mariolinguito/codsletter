@@ -37,5 +37,6 @@ Your users can subscribe to Codsletter using the form you can find and personali
 
 You can personalize the destination URL for the successful event of subscription, and the whole design of the form adapting it to your website or blog.
 
-An example of a newsletter sent by Codsletter: 
+An example of a newsletter sent by Codsletter:
+ 
 ![Example of a newsletter for my blog](screenshots/newsletter-example.png)

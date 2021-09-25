@@ -34,6 +34,8 @@
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
+                                
+                <p class="text-gray-600 text-xs pt-2">Don't use a password that you used on other websites.</p>
             </div>
 
             <!-- Confirm Password -->

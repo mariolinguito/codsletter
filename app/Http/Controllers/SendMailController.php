@@ -36,11 +36,9 @@ class SendMailController extends Controller
                 ];
         
                 $website_id = DB::table('websites')->where('user_id', $user->id)->first()->id;
+                $subscribers = Subscriber::where('website_id', $website_id)->get();
 
-                foreach(Subscriber::where('website_id', $website_id)->get() as $subscriber) {
-                    Notification::send($subscriber, new NewsletterNotification($details));
-                }
-                
+                Notification::send($subscribers, new NewsletterNotification($details));
             }
         }
     }

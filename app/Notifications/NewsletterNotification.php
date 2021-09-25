@@ -22,7 +22,6 @@ class NewsletterNotification extends Notification implements ShouldQueue
     public function __construct($notification_details)
     {
         $this->notification_details = $notification_details;
-        $this->delay(now()->addMinute(1));
     }
 
     /**

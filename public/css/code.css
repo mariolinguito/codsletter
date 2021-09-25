@@ -1,0 +1,61 @@
+pre {
+    max-width: 76rem;
+    margin: auto;
+    font-size: 16px;
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 3em 1em 1em;
+    border-radius: 0.5em;
+    box-shadow: 0em 0.25em 1.5em rgba(0, 0, 0, 0.15);
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;  
+}
+pre::before, pre::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2em;
+} 
+pre::before {
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+    z-index: 1;
+} 
+pre::after {
+    z-index: 2;
+    background: radial-gradient(circle at center, silver 50%, transparent 50%), radial-gradient(circle at center, silver 50%, transparent 50%), radial-gradient(circle at center, silver 50%, transparent 50%);
+    background-position: 1em center, 2.5em center, 4em center;
+    background-size: 1.125em 1.125em;
+    background-repeat: no-repeat;
+}
+pre code {
+    display: block;
+    overflow: auto;
+} 
+.html::after {
+    content: 'HTML';
+    text-align: right;
+    line-height: 2;
+    padding-right: 10px;
+} 
+.html::after {
+    content: 'HTML';
+    text-align: right;
+    line-height: 2;
+    padding-right: 10px;
+    font-weight: bold; 
+}
+mark {
+    background-color: #ffeeb5;
+    border-radius: 5px;
+    padding: 2px;
+}

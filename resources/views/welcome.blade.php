@@ -43,15 +43,53 @@
             </x-slot>
 
             <div class="py-12">
-                <img src="https://doodleipsum.com/800/outline?i=2c350be916b8b173cd3026cbcdea1acb" width="500" height="auto">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <div class="items-center justify-between">
+                                <h2>
+                                    {{ __('Step 1') }}
+                                </h2>
+                                <p>
+                                    Set a website URL and the general settings regards 
+                                    <br>minimum number of posts to reach, a range of days, 
+                                    <br>an html tag for title, the headline and the body for 
+                                    <br>your e-mail.
+                                </p>
+                                    
+                                <a href="https://github.com/mariolinguito/codsletter" class="underline">Click here to see how to do.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
-                            <div class="flex items-center justify-between">
+                            <div class="items-center justify-between">
                                 <h2>
-                                    {{ __('Seems we have not a welcome page yet...') }}
+                                    {{ __('Step 2') }}
                                 </h2>
+                                <p>
+                                    Create the form for your subscribers
+                                    <br>using the button in your dashboard
+                                    <br>and put it into your website or where 
+                                    <br>you want!
+                                </p>
+                                
+                                <a href="https://github.com/mariolinguito/codsletter" class="underline">Click here to see how to do.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <div class="items-center justify-between">
+                                <h3 class="text-center">
+                                    {{ __('Created with 💗 in Italy by ') }}<a href="https://twitter.com/mlinguito" target="_blank" class="underline">me</a>
+                                </h3>
                             </div>
                         </div>
                     </div>

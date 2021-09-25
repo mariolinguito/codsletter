@@ -40,3 +40,8 @@ You can personalize the destination URL for the successful event of subscription
 An example of a newsletter sent by Codsletter:
  
 ![Example of a newsletter for my blog](screenshots/newsletter-example.png)
+
+## Todo list: future features (want you give me an hand?)
+
+- Add the possibility to manage personal SMTP account so users can personalize better the newsletter,
+- Add the possibility to manage multiple templates and blocks inside them;

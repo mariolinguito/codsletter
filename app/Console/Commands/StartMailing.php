@@ -43,6 +43,6 @@ class StartMailing extends Command
         $send_mail_controller = new SendMailController();
         $send_mail_controller->startMailing();
 
-        \Log::info("Start mailing operation finisched!");
+        \Log::info("Mailing operation finisched!");
     }
 }

@@ -26,10 +26,16 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
 
-        // Check the mailing every day.    
-        $schedule->command('start:mailing')
-            ->everyMinute()
-            ->runInBackground();
+        // Every minute we can check if there are 
+        // some email to send; every minute because 
+        // on Heroku we run the command every day.
+        //
+        // Disabled because in Heroku we call directly 
+        // the command start:mailing every day.
+        // 
+        // $schedule->command('start:mailing')
+        //     ->everyMinute()
+        //     ->runInBackground();
     }
 
     /**

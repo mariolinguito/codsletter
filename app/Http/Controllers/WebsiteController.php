@@ -14,7 +14,7 @@ class WebsiteController extends Controller
     private $view;
     
     public function store(Request $request) {
-        $website = Website::create([
+        $website = Website::updateOrCreate([
             'url' => $request->website,
             'token' => Str::random(13),
             'user_id' => Auth::id(),

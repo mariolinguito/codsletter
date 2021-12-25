@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Website;
 use Illuminate\Http\Request;
 use Goutte;
 use Auth;
-use DB;
 
 class TestController extends Controller
 {
     
     public function runScraptingTest() {
+
+        $website = Website::where(
+            ['user_id' => Auth::id()]
+        )->first();
+        
+        $settings = $website->settings;
         
         try {
-            $joined_data = 
-                DB::table('websites')
-                    ->join('settings', 'websites.id', '=', 'settings.website_id')
-                    ->where('websites.user_id', Auth::id())
-                    ->first();
-
-            $crawler = Goutte::request('GET', $joined_data->url);
-            $example = $crawler->filter($joined_data->title_tag)->first()->text();
+            $crawler = Goutte::request('GET', $website->url);
+            $example = $crawler->filter($settings->title_tag)->first()->text();
         } catch(\InvalidArgumentException $exception) {
             $example = "Something gone wrong with website...";
         } catch(\ErrorException $exception) {

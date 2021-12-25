@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
 use App\Models\Website;
-use DB;
 use Auth;
 use Redirect;
 
@@ -29,8 +28,7 @@ class SubscribersController extends Controller
     public function subscribe(Request $request) {
 
         try {
-            $website = DB::table('websites')->where('websites.token', $request->token)->first();
-            $website_id = $website->id;
+            $website_id = Website::where(['websites.token' => $request->token])->first()->id;
 
             $subscriber = Subscriber::updateOrCreate(['email' => $request->email, 'website_id' => $website_id], [
                 'name' => $request->name,
@@ -55,10 +53,10 @@ class SubscribersController extends Controller
     public function list() {
 
         try {
-            $website = DB::table('websites')->where('user_id', Auth::id())->first();
+            $website = Website::where(['user_id' => Auth::id()])->first();
 
             $returned_view_list = view('subscribers.subscribers', [
-                'subscribers' => DB::table('subscribers')->where('website_id', $website->id)->paginate(15)
+                'subscribers' => $website->subscribers()->paginate(15)
             ]);
         } catch(\ErrorException $exception) {
             $returned_view_list = view('subscribers.subscribers')->with('message', 'You should set a website first!');        

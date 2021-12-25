@@ -19,4 +19,28 @@ class Website extends Model
         'token',
         'user_id',
     ];
+
+    /**
+     * Get the settings associated with the website.
+     */
+    public function settings()
+    {
+        return $this->hasOne(Setting::class);
+    }
+
+    /**
+     * Get the flash data associated with the website.
+     */
+    public function flash_data()
+    {
+        return $this->hasOne(WebsiteFlashData::class);
+    }
+
+    /**
+     * Get the subscribers associated with the website.
+     */
+    public function subscribers()
+    {
+        return $this->hasMany(Subscriber::class);
+    }
 }

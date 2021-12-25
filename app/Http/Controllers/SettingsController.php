@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use Auth;
+use App\Models\Website;
 use App\Models\Setting;
+use Auth;
 
 class SettingsController extends Controller
 {
@@ -15,7 +15,7 @@ class SettingsController extends Controller
     public function store(Request $request) {
 
         try {
-            $website_id = DB::table('websites')->where('user_id', Auth::id())->value('id');
+            $website_id = Website::where(['user_id' => Auth::id()])->first()->id;
             $settings = Setting::updateOrCreate(['website_id' => $website_id], [
                 'scheduler' => $request->scheduler,
                 'posts_number' => $request->posts_number,
@@ -37,8 +37,8 @@ class SettingsController extends Controller
 
     public function get() {
         try {
-            $website = DB::table('websites')->where('user_id', Auth::id())->first();
-            $settings = DB::table('settings')->where('website_id', $website->id)->first();
+            $website = Website::where(['user_id' => Auth::id()])->first();
+            $settings = $website->settings;
 
             $this->view = view('profile/edit-settings', ['settings' => $settings]);
         } catch(\ErrorException $exception) {

@@ -73,10 +73,6 @@ Your users can subscribe to Codsletter using the form you can find and personali
 You can personalize the destination URL for the successful event of subscription, and the whole design of the form adapting it to your website or blog.
 
 An example of a newsletter sent by Codsletter:
- 
+
 ![Example of a newsletter for my blog](screenshots/newsletter-example.png)
 
-## Todo list: future features (want you give me an hand?)
-
-- Add the possibility to manage personal SMTP account so users can personalize better the newsletter, 
-- Add the possibility to retrieve automatically the title tag based on a title text;

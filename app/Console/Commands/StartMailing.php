@@ -34,7 +34,7 @@ class StartMailing extends Command
     /**
      * Execute the console command.
      *
-     * @return int
+     * @return mixed
      */
     public function handle()
     {
@@ -43,6 +43,6 @@ class StartMailing extends Command
         $send_mail_controller = new SendMailController();
         $send_mail_controller->startMailing();
 
-        \Log::info("Mailing operation finisched!");
+        \Log::info("Mailing operation finished!");
     }
 }
